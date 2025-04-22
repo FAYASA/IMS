@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = inventory.services
-build_property.ProjectDir = D:\Learn .net\Project\Online_Inventory_Management_System\inventory.services\
+build_property.ProjectDir = D:\GitHub_Repo\IMS\inventory.services\

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Learn .net\\Project\\Online_Inventory_Management_System\\inventory.utility\\inventory.utility.csproj": {}
+    "D:\\GitHub_Repo\\IMS\\inventory.utility\\inventory.utility.csproj": {}
   },
   "projects": {
-    "D:\\Learn .net\\Project\\Online_Inventory_Management_System\\inventory.utility\\inventory.utility.csproj": {
+    "D:\\GitHub_Repo\\IMS\\inventory.utility\\inventory.utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learn .net\\Project\\Online_Inventory_Management_System\\inventory.utility\\inventory.utility.csproj",
+        "projectUniqueName": "D:\\GitHub_Repo\\IMS\\inventory.utility\\inventory.utility.csproj",
         "projectName": "inventory.utility",
-        "projectPath": "D:\\Learn .net\\Project\\Online_Inventory_Management_System\\inventory.utility\\inventory.utility.csproj",
+        "projectPath": "D:\\GitHub_Repo\\IMS\\inventory.utility\\inventory.utility.csproj",
         "packagesPath": "C:\\Users\\Fayas\\.nuget\\packages\\",
-        "outputPath": "D:\\Learn .net\\Project\\Online_Inventory_Management_System\\inventory.utility\\obj\\",
+        "outputPath": "D:\\GitHub_Repo\\IMS\\inventory.utility\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

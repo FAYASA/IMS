@@ -821,11 +821,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Learn .net\\Project\\Online_Inventory_Management_System\\inventory.services\\inventory.services.csproj",
+      "projectUniqueName": "D:\\GitHub_Repo\\IMS\\inventory.services\\inventory.services.csproj",
       "projectName": "inventory.services",
-      "projectPath": "D:\\Learn .net\\Project\\Online_Inventory_Management_System\\inventory.services\\inventory.services.csproj",
+      "projectPath": "D:\\GitHub_Repo\\IMS\\inventory.services\\inventory.services.csproj",
       "packagesPath": "C:\\Users\\Fayas\\.nuget\\packages\\",
-      "outputPath": "D:\\Learn .net\\Project\\Online_Inventory_Management_System\\inventory.services\\obj\\",
+      "outputPath": "D:\\GitHub_Repo\\IMS\\inventory.services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
