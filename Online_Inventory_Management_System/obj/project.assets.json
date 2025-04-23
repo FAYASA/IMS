@@ -358,6 +358,19 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "inventory.utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/inventory.utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/inventory.utility.dll": {}
+        }
       }
     }
   },
@@ -807,11 +820,17 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "inventory.utility/1.0.0": {
+      "type": "project",
+      "path": "../inventory.utility/inventory.utility.csproj",
+      "msbuildProject": "../inventory.utility/inventory.utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.0"
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.0",
+      "inventory.utility >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -847,7 +866,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\GitHub_Repo\\IMS\\inventory.utility\\inventory.utility.csproj": {
+              "projectPath": "D:\\GitHub_Repo\\IMS\\inventory.utility\\inventory.utility.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

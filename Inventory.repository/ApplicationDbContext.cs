@@ -46,8 +46,7 @@ namespace Inventory.repository
         public DbSet<UserProfile> userProfiles { get; set; }
         public DbSet<Vendor> vendors { get; set; }
         public DbSet<VendorType> vendorTypes { get; set; }
-        public DbSet<Warehouse> warehouses { get; set; }
-
+        public DbSet<Warehouse> Warehouses { get; set; }
 
     }
 }
