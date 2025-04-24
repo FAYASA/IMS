@@ -401,6 +401,20 @@
         "runtime": {
           "bin/placeholder/inventory.models.dll": {}
         }
+      },
+      "Inventory.repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "inventory.models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Inventory.repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Inventory.repository.dll": {}
+        }
       }
     }
   },
@@ -900,10 +914,16 @@
       "type": "project",
       "path": "../inventory.models/inventory.models.csproj",
       "msbuildProject": "../inventory.models/inventory.models.csproj"
+    },
+    "Inventory.repository/1.0.0": {
+      "type": "project",
+      "path": "../Inventory.repository/Inventory.repository.csproj",
+      "msbuildProject": "../Inventory.repository/Inventory.repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Inventory.repository >= 1.0.0",
       "Microsoft.AspNetCore.Http.Features >= 5.0.17",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.0",
       "inventory.models >= 1.0.0"
@@ -944,6 +964,9 @@
           "projectReferences": {
             "D:\\GitHub_Repo\\IMS\\inventory.models\\inventory.models.csproj": {
               "projectPath": "D:\\GitHub_Repo\\IMS\\inventory.models\\inventory.models.csproj"
+            },
+            "D:\\GitHub_Repo\\IMS\\Inventory.repository\\Inventory.repository.csproj": {
+              "projectPath": "D:\\GitHub_Repo\\IMS\\Inventory.repository\\Inventory.repository.csproj"
             }
           }
         }

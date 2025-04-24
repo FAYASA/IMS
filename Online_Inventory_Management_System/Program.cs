@@ -4,6 +4,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//////
+///It reads the "SuperAdmin" section from appsettings.json.
+///It maps the values to the SuperAdmin class.
+///It makes the data available for injection using Get<T>()
+///
 builder.Services.Configure<SuperAdmin>(builder.Configuration.GetSection("SuperAdmin"));
 
 var app = builder.Build();
