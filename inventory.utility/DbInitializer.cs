@@ -1,4 +1,6 @@
-﻿using System;
+﻿using inventory.models;
+using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,7 @@ namespace inventory.utility
 {
     public class DbInitializer
     {
+        private readonly UserManager<AppUser> userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
     }
 }
