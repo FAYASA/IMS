@@ -1,0 +1,5 @@
+D:\GitHub_Repo\IMS\inventory.utility\obj\Debug\net7.0\inventory.utility.csproj.AssemblyReference.cache
+D:\GitHub_Repo\IMS\inventory.utility\obj\Debug\net7.0\inventory.utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub_Repo\IMS\inventory.utility\obj\Debug\net7.0\inventory.utility.AssemblyInfoInputs.cache
+D:\GitHub_Repo\IMS\inventory.utility\obj\Debug\net7.0\inventory.utility.AssemblyInfo.cs
+D:\GitHub_Repo\IMS\inventory.utility\obj\Debug\net7.0\inventory.utility.csproj.CoreCompileInputs.cache
