@@ -7,7 +7,7 @@ builder.Services.AddControllersWithViews();
 //////
 ///It reads the "SuperAdmin" section from appsettings.json.
 ///It maps the values to the SuperAdmin class.
-///It makes the data available for injection using Get<T>()
+///It makes the data available for injection using IOptions<SuperAdmin>.
 ///
 builder.Services.Configure<SuperAdmin>(builder.Configuration.GetSection("SuperAdmin"));
 

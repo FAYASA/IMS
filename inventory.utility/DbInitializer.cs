@@ -8,6 +8,8 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -53,9 +55,33 @@ namespace inventory.utility
             }
         }
 
-        public Task SendEmail(string FromEmail, string FromName, string Message, string toEmail, string toName, string smtpUser, string smtpPassword, string smtpHost, string smtpPort, bool smtpSSl)
+        public async Task SendEmail(string FromEmail, string FromName, string Subject ,string Message, string toEmail,
+            string toName, string smtpUser, string smtpPassword, string smtpHost, string smtpPort,
+            bool smtpSSl)
         {
-            throw new NotImplementedException();
+            var body = Message;
+            var messageRequest = new MailMessage();
+            messageRequest.To.Add(new MailAddress(toEmail, toName));
+            messageRequest.From = new MailAddress(FromEmail, FromName);
+            messageRequest.Subject = Subject;
+            messageRequest.Body = body;
+            messageRequest.IsBodyHtml = true;
+
+            using (var smtp = new SmtpClient())
+            {
+                var crediential = new NetworkCredential
+                {
+                    UserName = smtpUser,
+                    Password = smtpPassword,
+                };
+
+                smtp.Credentials = crediential;
+                smtp.Host = smtpHost;
+                smtp.Port = Convert.ToInt32(smtpPort);
+                smtp.EnableSsl = smtpSSl;
+
+                await smtp.SendMailAsync(messageRequest);
+            }
         }
 
         /// to updalod files

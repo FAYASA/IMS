@@ -11,7 +11,7 @@ namespace inventory.utility
     public interface IDbInitializer
     {
         Task CreateSuperAdmin();
-        Task SendEmail(string FromEmail, string FromName,
+        Task SendEmail(string FromEmail, string FromName,string Subject,
             string Message, string toEmail, string toName, string smtpUser, string smtpPassword,
             string smtpHost, string smtpPort, bool smtpSSl);
 
