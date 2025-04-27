@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Inventory_Management_System", "Online_Inventory_Management_System\Online_Inventory_Management_System.csproj", "{6C9869D5-BC3B-497F-8C85-A4986D750605}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Online_Inventory_Management_System", "Online_Inventory_Management_System\Online_Inventory_Management_System.csproj", "{6C9869D5-BC3B-497F-8C85-A4986D750605}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.repository", "Inventory.repository\Inventory.repository.csproj", "{83BDC810-CBBB-43E1-AFA6-8F8C00C7C94F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.repository", "Inventory.repository\Inventory.repository.csproj", "{83BDC810-CBBB-43E1-AFA6-8F8C00C7C94F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inventory.models", "inventory.models\inventory.models.csproj", "{263BEF7C-66D9-4909-A308-DC2654D1987A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "inventory.models", "inventory.models\inventory.models.csproj", "{263BEF7C-66D9-4909-A308-DC2654D1987A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inventory.services", "inventory.services\inventory.services.csproj", "{E68B2FE2-14C3-4364-B813-B2612C58C5FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "inventory.services", "inventory.services\inventory.services.csproj", "{E68B2FE2-14C3-4364-B813-B2612C58C5FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inventory.utility", "inventory.utility\inventory.utility.csproj", "{4CA262B0-6867-4AA4-8BDE-3B903D36366E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "inventory.utility", "inventory.utility\inventory.utility.csproj", "{4CA262B0-6867-4AA4-8BDE-3B903D36366E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.ViewModel", "Inventory.ViewModel\Inventory.ViewModel.csproj", "{5274C4C2-978D-4437-A3DA-088EA0A8A656}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4CA262B0-6867-4AA4-8BDE-3B903D36366E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CA262B0-6867-4AA4-8BDE-3B903D36366E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CA262B0-6867-4AA4-8BDE-3B903D36366E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5274C4C2-978D-4437-A3DA-088EA0A8A656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5274C4C2-978D-4437-A3DA-088EA0A8A656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5274C4C2-978D-4437-A3DA-088EA0A8A656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5274C4C2-978D-4437-A3DA-088EA0A8A656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

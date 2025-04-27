@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Online_Inventory_Management_System.props" />
+</Project>
