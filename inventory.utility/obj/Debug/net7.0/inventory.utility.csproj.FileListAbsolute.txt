@@ -8,8 +8,10 @@ D:\GitHub_Repo\IMS\inventory.utility\bin\Debug\net7.0\inventory.utility.dll
 D:\GitHub_Repo\IMS\inventory.utility\bin\Debug\net7.0\inventory.utility.pdb
 D:\GitHub_Repo\IMS\inventory.utility\bin\Debug\net7.0\inventory.models.dll
 D:\GitHub_Repo\IMS\inventory.utility\bin\Debug\net7.0\Inventory.repository.dll
+D:\GitHub_Repo\IMS\inventory.utility\bin\Debug\net7.0\Inventory.ViewModel.dll
 D:\GitHub_Repo\IMS\inventory.utility\bin\Debug\net7.0\inventory.models.pdb
 D:\GitHub_Repo\IMS\inventory.utility\bin\Debug\net7.0\Inventory.repository.pdb
+D:\GitHub_Repo\IMS\inventory.utility\bin\Debug\net7.0\Inventory.ViewModel.pdb
 D:\GitHub_Repo\IMS\inventory.utility\obj\Debug\net7.0\inventory.utility.csproj.CopyComplete
 D:\GitHub_Repo\IMS\inventory.utility\obj\Debug\net7.0\inventory.utility.dll
 D:\GitHub_Repo\IMS\inventory.utility\obj\Debug\net7.0\refint\inventory.utility.dll

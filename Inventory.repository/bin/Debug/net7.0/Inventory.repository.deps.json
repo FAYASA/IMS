@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "Inventory.repository/1.0.0": {
         "dependencies": {
+          "Inventory.ViewModel": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "inventory.models": "1.0.0"
         },
@@ -231,6 +232,14 @@
         "runtime": {
           "inventory.models.dll": {}
         }
+      },
+      "Inventory.ViewModel/1.0.0": {
+        "dependencies": {
+          "inventory.models": "1.0.0"
+        },
+        "runtime": {
+          "Inventory.ViewModel.dll": {}
+        }
       }
     }
   },
@@ -388,6 +397,11 @@
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "inventory.models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Inventory.ViewModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -406,6 +406,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Inventory.ViewModel": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "inventory.models": "1.0.0"
         },
@@ -414,6 +415,19 @@
         },
         "runtime": {
           "bin/placeholder/Inventory.repository.dll": {}
+        }
+      },
+      "Inventory.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "inventory.models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Inventory.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Inventory.ViewModel.dll": {}
         }
       }
     }
@@ -919,6 +933,11 @@
       "type": "project",
       "path": "../Inventory.repository/Inventory.repository.csproj",
       "msbuildProject": "../Inventory.repository/Inventory.repository.csproj"
+    },
+    "Inventory.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../Inventory.ViewModel/Inventory.ViewModel.csproj",
+      "msbuildProject": "../Inventory.ViewModel/Inventory.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {

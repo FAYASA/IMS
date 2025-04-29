@@ -371,6 +371,19 @@
         "runtime": {
           "bin/placeholder/inventory.models.dll": {}
         }
+      },
+      "Inventory.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "inventory.models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Inventory.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Inventory.ViewModel.dll": {}
+        }
       }
     }
   },
@@ -825,10 +838,16 @@
       "type": "project",
       "path": "../inventory.models/inventory.models.csproj",
       "msbuildProject": "../inventory.models/inventory.models.csproj"
+    },
+    "Inventory.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../Inventory.ViewModel/Inventory.ViewModel.csproj",
+      "msbuildProject": "../Inventory.ViewModel/Inventory.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Inventory.ViewModel >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.0",
       "inventory.models >= 1.0.0"
     ]
@@ -868,6 +887,9 @@
           "projectReferences": {
             "D:\\GitHub_Repo\\IMS\\inventory.models\\inventory.models.csproj": {
               "projectPath": "D:\\GitHub_Repo\\IMS\\inventory.models\\inventory.models.csproj"
+            },
+            "D:\\GitHub_Repo\\IMS\\Inventory.ViewModel\\Inventory.ViewModel.csproj": {
+              "projectPath": "D:\\GitHub_Repo\\IMS\\Inventory.ViewModel\\Inventory.ViewModel.csproj"
             }
           }
         }

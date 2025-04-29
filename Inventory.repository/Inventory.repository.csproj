@@ -12,6 +12,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\inventory.models\inventory.models.csproj" />
+    <ProjectReference Include="..\Inventory.ViewModel\Inventory.ViewModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ProductService\" />
+    <Folder Include="ProductTypeService\" />
   </ItemGroup>
 
 </Project>
