@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "D:\\GitHub_Repo\\IMS\\Online_Inventory_Management_System\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Online_Inventory_Management_System.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Online_Inventory_Management_System.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Online_Inventory_Management_System.7tu882o204.bundle.scp.css"
     },
     {
       "Id": "D:\\GitHub_Repo\\IMS\\Online_Inventory_Management_System\\wwwroot\\css\\site.css",
@@ -243,6 +243,10 @@
     {
       "Id": "D:\\GitHub_Repo\\IMS\\Online_Inventory_Management_System\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Online_Inventory_Management_System.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Online_Inventory_Management_System.Microsoft.AspNetCore.StaticWebAssets.props",

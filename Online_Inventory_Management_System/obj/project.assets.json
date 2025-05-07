@@ -686,19 +686,19 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/7.0.20": {
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.20",
-          "Microsoft.Extensions.Identity.Stores": "7.0.20"
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.0",
+          "Microsoft.Extensions.Identity.Stores": "6.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+          "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+          "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
             "related": ".xml"
           }
         }
@@ -4050,7 +4050,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.AspNetCore.Identity.UI": "7.0.20",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20"
         },
         "compile": {
           "bin/placeholder/inventory.models.dll": {}
@@ -4065,6 +4067,7 @@
         "dependencies": {
           "Inventory.ViewModel": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
           "inventory.models": "1.0.0"
         },
         "compile": {
@@ -4081,6 +4084,7 @@
           "Inventory.repository": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
           "inventory.models": "1.0.0"
         },
         "compile": {
@@ -4097,6 +4101,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
           "inventory.models": "1.0.0"
         },
         "compile": {
@@ -4954,18 +4960,18 @@
         "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/7.0.20": {
-      "sha512": "spseLBlPrzkrv4MI602VIu3dpd478FEZS+Ot5/M30TXEqEoeFV3MlTsRGV46xIPWL59g9FGzUqCZ3kcAYKI9cg==",
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.0": {
+      "sha512": "e4aPE+DfCOiGGYJzsKA9up5hmiCYzwxz+ktkFvuMUnLD2FfNPkjAXjdElfaH9wr7chEwOerOcQhNKS/THPew8A==",
       "type": "package",
-      "path": "microsoft.aspnetcore.identity.entityframeworkcore/7.0.20",
+      "path": "microsoft.aspnetcore.identity.entityframeworkcore/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll",
-        "lib/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml",
-        "microsoft.aspnetcore.identity.entityframeworkcore.7.0.20.nupkg.sha512",
+        "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml",
+        "microsoft.aspnetcore.identity.entityframeworkcore.6.0.0.nupkg.sha512",
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
       ]
     },
@@ -11811,7 +11817,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.20",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.0",
       "Microsoft.AspNetCore.Identity.UI >= 7.0.20",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.20",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.20",
@@ -11845,8 +11851,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11863,7 +11867,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net7.0": {
@@ -11871,7 +11881,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[7.0.20, )"
+            "version": "[6.0.0, )"
           },
           "Microsoft.AspNetCore.Identity.UI": {
             "target": "Package",
@@ -11911,7 +11921,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

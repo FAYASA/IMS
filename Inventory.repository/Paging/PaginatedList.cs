@@ -38,9 +38,5 @@ namespace Inventory.repository.Paging
             return new PaginatedList<T>(items, count, pageIndex, pageSize);
         }
 
-        internal static Task<PaginatedList<BillTypeListViewModel>> CreateAsync(IQueryable<BillTypeListViewModel> vm, int pageNumber, int pageSize)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

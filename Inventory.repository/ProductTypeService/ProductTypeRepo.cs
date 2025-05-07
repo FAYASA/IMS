@@ -12,17 +12,18 @@ namespace Inventory.repository.ProductTypeService
 {
     public class ProductTypeRepo : IProductTypeRepo
     {
-        public ApplicationDbContext _context;
+        private ApplicationDbContext _context;
 
         public ProductTypeRepo(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        async Task<PaginatedList<ProductTypeListViewModel>> IProductTypeRepo.GetAll(int pageSize, int pageNumber)
+       public async Task<PaginatedList<ProductTypeListViewModel>> GetAll(int pageSize, int pageNumber)
+        
         {
-            var ProductType = _context.productTypes;
-            var vm = ProductType.ModelToVM().AsQueryable();
+            var ProductTypeList = _context.productTypes;
+            var vm = ProductTypeList.ModelToVM().AsQueryable();
             return await PaginatedList<ProductTypeListViewModel>.CreateAsync(vm, pageNumber, pageSize);
         }
     }

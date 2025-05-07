@@ -25,5 +25,6 @@ namespace Inventory.repository.BillService
             var vm = bills.ModelToVM().AsQueryable();
             return await PaginatedList<BillListViewModel>.CreateAsync(vm, pageNumber, pageSize);
         }
+
     }
 }

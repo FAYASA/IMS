@@ -65,21 +65,32 @@ namespace Inventory.ViewModel.Mapping
             return List;
         }
 
-        public static IEnumerable<BillTypeListViewModel> ModelToVM (this IEnumerable<BillType> billType)
-        {
-            List<BillTypeListViewModel> List = new List<BillTypeListViewModel>();
-            foreach (var bt in billType)
-            {
-                List.Add(new BillTypeListViewModel()
-                {
-                    BillTypeId = bt.BillTypeId,
-                    BillTypeName = bt.BillTypeName,
-                    Description = bt.Description
-                });
-            }
-            return List;
+        //public static IEnumerable<BillTypeListViewModel> ModelToVM (this IEnumerable<BillType> billType)
+        //{
+        //    List<BillTypeListViewModel> List = new List<BillTypeListViewModel>();
+        //    foreach (var bt in billType)
+        //    {
+        //        List.Add(new BillTypeListViewModel()
+        //        {
+        //            BillTypeId = bt.BillTypeId,
+        //            BillTypeName = bt.BillTypeName,
+        //            Description = bt.Description
+        //        });
+        //    }
+        //    return List;
 
+        //}
+
+        public static IQueryable<BillTypeListViewModel> ModelToVM(this IQueryable<BillType> billType)
+        {
+            return billType.Select(bt => new BillTypeListViewModel
+            {
+                BillTypeId = bt.BillTypeId,
+                BillTypeName = bt.BillTypeName,
+                Description = bt.Description
+            });
         }
+
 
         public static IEnumerable<BillListViewModel> ModelToVM (this IEnumerable<inventory.models.Bill> bill)
         {

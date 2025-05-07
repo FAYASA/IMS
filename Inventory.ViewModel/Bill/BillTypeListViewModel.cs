@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventory.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace Inventory.ViewModel.Bill
         [Required]
         public string BillTypeName { get; set; }
         public string Description { get; set; }
+
     }
 }

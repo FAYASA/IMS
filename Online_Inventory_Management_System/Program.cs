@@ -2,16 +2,30 @@ using inventory.utility.HelperClass;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Inventory.repository;
+using Inventory.repository.BillTypeService;
+using inventory.models;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//options.UseSqlServer(connectionString, b => b.MigrationsAssembly("Inventory.repository")));
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString, b => b.MigrationsAssembly("Online_Inventory_Management_System")));
+
+
+builder.Services.AddIdentity<AppUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IBillTypeRepo, BillTypeRepo>();
+
 //////
 ///It reads the "SuperAdmin" section from appsettings.json.
 ///It maps the values to the SuperAdmin class.

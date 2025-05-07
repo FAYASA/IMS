@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "Online_Inventory_Management_System/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.20",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "Microsoft.AspNetCore.Identity.UI": "7.0.20",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.20",
@@ -618,15 +618,15 @@
           "System.IO.Pipelines": "6.0.3"
         }
       },
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/7.0.20": {
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "7.0.20",
           "Microsoft.Extensions.Identity.Stores": "7.0.20"
         },
         "runtime": {
-          "lib/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
-            "assemblyVersion": "7.0.20.0",
-            "fileVersion": "7.0.2024.26907"
+          "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52608"
           }
         }
       },
@@ -2603,39 +2603,57 @@
       },
       "inventory.models/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.20"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.AspNetCore.Identity.UI": "7.0.20",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20"
         },
         "runtime": {
-          "inventory.models.dll": {}
+          "inventory.models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Inventory.repository/1.0.0": {
         "dependencies": {
           "Inventory.ViewModel": "1.0.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.20",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
           "inventory.models": "1.0.0"
         },
         "runtime": {
-          "Inventory.repository.dll": {}
+          "Inventory.repository.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "inventory.utility/1.0.0": {
         "dependencies": {
           "Inventory.repository": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.20",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
           "inventory.models": "1.0.0"
         },
         "runtime": {
-          "inventory.utility.dll": {}
+          "inventory.utility.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Inventory.ViewModel/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
           "inventory.models": "1.0.0"
         },
         "runtime": {
-          "Inventory.ViewModel.dll": {}
+          "Inventory.ViewModel.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -3031,12 +3049,12 @@
       "path": "microsoft.aspnetcore.http.features/5.0.17",
       "hashPath": "microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/7.0.20": {
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-spseLBlPrzkrv4MI602VIu3dpd478FEZS+Ot5/M30TXEqEoeFV3MlTsRGV46xIPWL59g9FGzUqCZ3kcAYKI9cg==",
-      "path": "microsoft.aspnetcore.identity.entityframeworkcore/7.0.20",
-      "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.7.0.20.nupkg.sha512"
+      "sha512": "sha512-e4aPE+DfCOiGGYJzsKA9up5hmiCYzwxz+ktkFvuMUnLD2FfNPkjAXjdElfaH9wr7chEwOerOcQhNKS/THPew8A==",
+      "path": "microsoft.aspnetcore.identity.entityframeworkcore/6.0.0",
+      "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.6.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Identity.UI/7.0.20": {
       "type": "package",
