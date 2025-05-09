@@ -16,9 +16,9 @@ namespace Inventory.ViewModel.Bill
         {
             return new BillType
             {
-                BillTypeId = BillTypeId,
-                BillTypeName = BillTypeName,
-                Description = Description
+                BillTypeId = this.BillTypeId,
+                BillTypeName = this.BillTypeName,
+                Description = this.Description
             };
         }
     }

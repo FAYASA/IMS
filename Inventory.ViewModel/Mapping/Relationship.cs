@@ -83,6 +83,7 @@ namespace Inventory.ViewModel.Mapping
 
         public static IQueryable<BillTypeListViewModel> ModelToVM(this IQueryable<BillType> billType)
         {
+            // •	When need to map or transform data from one type to another.
             return billType.Select(bt => new BillTypeListViewModel
             {
                 BillTypeId = bt.BillTypeId,

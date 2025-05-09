@@ -13,7 +13,9 @@ namespace Inventory.ViewModel.Bill
         public string BillTypeName { get; set; }
         public string Description { get; set; }
 
-    public BillTypeViewModel(BillType model)
+        // Parameterless constructor required for model binding
+        public BillTypeViewModel() { }
+        public BillTypeViewModel(BillType model)
         {
             BillTypeId = model.BillTypeId;
             BillTypeName = model.BillTypeName;

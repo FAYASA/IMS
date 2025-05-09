@@ -53,6 +53,7 @@ namespace Online_Inventory_Management_System.Controllers
             }
             return View();
         }
+
         [HttpGet]
         public IActionResult Delete(int id)
         {
