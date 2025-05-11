@@ -34,10 +34,10 @@ namespace inventory.utility
         }
         public static class BillType
         {
-            public const string PageName = "BillType";
+            public const string PageName = "Bill Type";
             public const string RoleName = "BillType";
             public const string Path = "/BillType/Index";
-            public const string ControllerName = "BillType";
+            public const string ControllerName = "BillTypes";
             public const string ActionName = "Index";
         }
         public static class Branch
