@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Inventory.repository;
 using Inventory.repository.BillTypeService;
 using inventory.models;
+using Inventory.repository.CustomerService;
+using Inventory.repository.CustomerType;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
@@ -24,6 +26,8 @@ builder.Services.AddIdentity<AppUser,IdentityRole>(options => options.SignIn.Req
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IBillTypeRepo, BillTypeRepo>();
+
+builder.Services.AddScoped<ICustomerTypeRepo, CustomerTypeRepo>();
 
 //////
 ///It reads the "SuperAdmin" section from appsettings.json.

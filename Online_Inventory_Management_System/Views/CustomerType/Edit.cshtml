@@ -1,24 +1,24 @@
-﻿@model Inventory.ViewModel.Bill.BillTypeViewModel
+﻿@model Inventory.ViewModel.Customer.CustomerTypeViewModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
 <h1>Edit</h1>
-<h4>BillTypeViewModel</h4>
+
+<h4>CustomerTypeViewModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <!-- Hidden input for BillTypeId -->
-            <input asp-for="BillTypeId" type="hidden" />
-
             <div class="form-group">
-                <label asp-for="BillTypeName" class="control-label"></label>
-                <input asp-for="BillTypeName" class="form-control" />
-                <span asp-validation-for="BillTypeName" class="text-danger"></span>
+                <input asp-for="CustomerTypeId" class="form-control" type="hidden" />
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerTypeName" class="control-label"></label>
+                <input asp-for="CustomerTypeName" class="form-control" />
+                <span asp-validation-for="CustomerTypeName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
@@ -35,3 +35,4 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+

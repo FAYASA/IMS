@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Inventory.ViewModel.Customer.CustomerTypeListViewModel>
+
+@{
+    ViewData["Title"] = "Customer Types";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    Customer Type ID
+                </th>
+                <th>
+                    Customer Type Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerTypeId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerTypeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CustomerTypeId" class="btn btn-sm btn-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.CustomerTypeId" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

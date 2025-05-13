@@ -12,31 +12,22 @@ namespace Inventory.ViewModel.Mapping
 {
     public static class Relationship
     {
-        public static IEnumerable<CustomerTypeListViewModel>
-            ModelToVM(this IEnumerable<CustomerType> customerType)
+
+        public static IQueryable<CustomerTypeListViewModel> ModelToVM(this IQueryable<CustomerType> billType)
         {
-            List<CustomerTypeListViewModel> List = new List<CustomerTypeListViewModel>();
-            foreach (var ct in customerType)
+            // •	When need to map or transform data from one type to another.
+            return billType.Select(bt => new CustomerTypeListViewModel
             {
-                List.Add(new CustomerTypeListViewModel()
-                {
-                    CustomerTypeId = ct.CustomerTypeId,
-                    CustomerTypeName = ct.CustomerTypeName,
-                    Description = ct.Description
-                });
-            }
-            return List;
+                CustomerTypeId = bt.CustomerTypeId,
+                CustomerTypeName = bt.CustomerTypeName,
+                Description = bt.Description
+            });
         }
 
-        /// <summary>
-        /// 
         /// Getting Customer entities from the database (ApplicationDbContext.Customers),
         /// Mapping those Customer entities to CustomerListViewModel objects using ModelToVM(),
         /// Returning them as a PaginatedList(paged data).
         /// 
-        /// </summary>
-        /// <param name="customers"></param>
-        /// <returns></returns>
 
 
         ///// This is a method that will convert a list of Customer into a list of CustomerListViewModel.

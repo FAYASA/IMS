@@ -1,4 +1,5 @@
-﻿using Inventory.repository.Paging;
+﻿using inventory.models;
+using Inventory.repository.Paging;
 using Inventory.ViewModel.Bill;
 using Inventory.ViewModel.Customer;
 using Inventory.ViewModel.Mapping;
@@ -33,11 +34,10 @@ namespace Inventory.repository.BillTypeService
             return await PaginatedList<BillTypeListViewModel>.CreateAsync(vm, pageNumber, pageSize);
         }
 
-
         public void Add(CreateBillTypeViewModel model)
         {
-            var billType = model.VMToModel();
-            _context.BillTypes.Add(billType);
+            var vm = model.VMToModel();
+            _context.BillTypes.Add(vm);
             _context.SaveChanges();
         }
 
@@ -70,7 +70,6 @@ namespace Inventory.repository.BillTypeService
             var vm = new BillTypeViewModel(model);
             return vm;
         }
-
 
     }
 }
