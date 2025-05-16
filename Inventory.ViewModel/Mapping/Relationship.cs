@@ -13,14 +13,14 @@ namespace Inventory.ViewModel.Mapping
     public static class Relationship
     {
 
-        public static IQueryable<CustomerTypeListViewModel> ModelToVM(this IQueryable<CustomerType> billType)
+        public static IQueryable<CustomerTypeListViewModel> ModelToVM(this IQueryable<CustomerType> CustomerType)
         {
             // •	When need to map or transform data from one type to another.
-            return billType.Select(bt => new CustomerTypeListViewModel
+            return CustomerType.Select(ct => new CustomerTypeListViewModel
             {
-                CustomerTypeId = bt.CustomerTypeId,
-                CustomerTypeName = bt.CustomerTypeName,
-                Description = bt.Description
+                CustomerTypeId = ct.CustomerTypeId,
+                CustomerTypeName = ct.CustomerTypeName,
+                Description = ct.Description
             });
         }
 
@@ -105,20 +105,15 @@ namespace Inventory.ViewModel.Mapping
 
         }
 
-        public static IEnumerable<ProductTypeListViewModel> ModelToVM (this IEnumerable<inventory.models.ProductType> productTypes)
+        public static IQueryable<ProductTypeListViewModel> ModelToVM(this IQueryable<ProductType> ProductType)
         {
-            List<ProductTypeListViewModel> List = new List<ProductTypeListViewModel>();
-            foreach (var pt in productTypes)
+            // •	When need to map or transform data from one type to another.
+            return ProductType.Select(pt => new ProductTypeListViewModel
             {
-                List.Add(new ProductTypeListViewModel()
-                {
-                    ProductTypeId = pt.ProductTypeId,
-                    ProductTypeName = pt.ProductTypeName,
-                    Description = pt.Description
-                });
-            }
-            return List;
-
+                ProductTypeId = pt.ProductTypeId,
+                ProductTypeName = pt.ProductTypeName,
+                Description = pt.Description
+            });
         }
     }
 }

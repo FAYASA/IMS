@@ -1,26 +1,25 @@
-﻿@model Inventory.ViewModel.Customer.CreateCustomerTypeViewModel
+﻿@model Inventory.ViewModel.Product.CreateProductTypeViewModel
 
 @{
    ViewData["Title"] = "Create";
 }
 
-<h1 class="text-center my-4">Create Customer Type</h1>
+<h1 class="text-center my-4">Create Product Type</h1>
 
 <div class="container">
    <div class="row justify-content-center">
        <div class="col-md-6">
            <div class="card shadow-sm">
                <div class="card-header bg-primary text-white">
-                   <h4 class="mb-0">Create Customer Type</h4>
+                   <h4 class="mb-0">Create Product Type</h4>
                </div>
                <div class="card-body">
                    <form asp-action="Create">
                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-
                        <div class="form-group mb-3">
-                           <label asp-for="CustomerTypeName" class="form-label"></label>
-                           <input asp-for="CustomerTypeName" class="form-control" />
-                           <span asp-validation-for="CustomerTypeName" class="text-danger"></span>
+                           <label asp-for="ProductTypeName" class="form-label"></label>
+                           <input asp-for="ProductTypeName" class="form-control" />
+                           <span asp-validation-for="ProductTypeName" class="text-danger"></span>
                        </div>
                        <div class="form-group mb-3">
                            <label asp-for="Description" class="form-label"></label>
@@ -34,7 +33,7 @@
                </div>
            </div>
            <div class="text-center mt-3">
-               <a asp-action="Index" class="btn btn-link">Back to List</a>
+               <a asp-action="Index" class="btn btn-secondary">Back to List</a>
            </div>
        </div>
    </div>

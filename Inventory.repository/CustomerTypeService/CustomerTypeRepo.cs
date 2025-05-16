@@ -21,13 +21,7 @@ namespace Inventory.repository.CustomerType
 
         public void Add(CreateCustomerTypeViewModel model)
         {
-            var vm = new inventory.models.CustomerType
-            {
-                CustomerTypeId = model.CustomerTypeId,
-                CustomerTypeName = model.CustomerTypeName,
-                Description = model.Description
-            };
-            _context.CustomerTypes.Add(vm);
+            _context.CustomerTypes.Add(model.VMToModel());
             _context.SaveChanges();
         }
 
@@ -45,18 +39,14 @@ namespace Inventory.repository.CustomerType
         {
             var customerTypeList = _context.CustomerTypes;
             var vm = customerTypeList.ModelToVM().AsQueryable();
-            return await PaginatedList<CustomerTypeListViewModel>.CreateAsync(vm,pageNumber,pageSize);
+            return await PaginatedList<CustomerTypeListViewModel>.CreateAsync(vm, pageNumber, pageSize);
         }
 
         public CustomerTypeViewModel GetById(int id)
         {
             var model = _context.CustomerTypes.Where(x => x.CustomerTypeId == id).FirstOrDefault();
-            var vm = new CustomerTypeViewModel
-            {
-                CustomerTypeId = model.CustomerTypeId,
-                CustomerTypeName = model.CustomerTypeName,
-                Description = model.Description
-            };
+            var vm = new CustomerTypeViewModel();
+            vm.ModelToVM(model);
             return vm;
         }
 
@@ -65,11 +55,7 @@ namespace Inventory.repository.CustomerType
             var data = _context.CustomerTypes
                 .Where(x => x.CustomerTypeId == model.CustomerTypeId).FirstOrDefault();
 
-            if (data != null)
-            {
-                data.CustomerTypeName = model.CustomerTypeName;
-                data.Description = model.Description;
-            }
+            model.VMtoModel(data);
             _context.SaveChanges();
         }
     }

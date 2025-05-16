@@ -26,6 +26,22 @@ namespace inventory.utility
             public const string ActionName = "Index";
         }
 
+        public static class Product
+        {
+            public const string PageName = "Product";
+            public const string RoleName = "Product";
+            public const string Path = "/Product/Index";
+            public const string ControllerName = "Product";
+            public const string ActionName = "Index";
+        }
+        public static class ProductType
+        {
+            public const string PageName = "Product Type";
+            public const string RoleName = "ProductType";
+            public const string Path = "/ProductType/Index";
+            public const string ControllerName = "ProductType";
+            public const string ActionName = "Index";
+        }
         public static class Bank
         {
             public const string PageName = "Bank";

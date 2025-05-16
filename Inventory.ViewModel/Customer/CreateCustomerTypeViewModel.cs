@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventory.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,5 +14,15 @@ namespace Inventory.ViewModel.Customer
         [Required]
         public string CustomerTypeName { get; set; }
         public string Description { get; set; }
+
+        public CustomerType VMToModel()
+        {
+            return new CustomerType
+            {
+                CustomerTypeId = this.CustomerTypeId,
+                CustomerTypeName = this.CustomerTypeName,
+                Description = this.Description
+            };
+        }
     }
 }

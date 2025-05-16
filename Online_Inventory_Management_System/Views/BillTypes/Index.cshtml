@@ -1,87 +1,90 @@
-﻿@using Inventory.repository.Paging;
-@using Inventory.ViewModel.Bill;
-@model PaginatedList<BillTypeListViewModel>
+﻿@using Inventory.repository.Paging;  
+@using Inventory.ViewModel.Bill;  
+@model PaginatedList<BillTypeListViewModel>  
 
-@{
-    ViewData["Title"] = "Bill Types";
-}
+@{  
+   ViewData["Title"] = "Bill Types";  
+}  
 
-<h2>Bill Types</h2>
+<h2 class="text-center my-4">Bill Types</h2>  
 
-<div class="row mb-3">
-    <div class="col-md-6">
-        <a asp-action="Create" class="btn btn-primary">Add New Bill Type</a>
-    </div>
-    <div class="col-md-6 text-end">
-        <form asp-action="Index" method="get">
-            <input type="text" name="searchString" class="form-control" placeholder="Search Bill Types..." />
-        </form>
-    </div>
-</div>
+<div class="row mb-4">  
+   <div class="col-md-6">  
+       <a asp-action="Create" class="btn btn-primary">Add New Bill Type</a>  
+   </div>  
+   <div class="col-md-6">  
+       <form asp-action="Index" method="get" class="d-flex justify-content-end">  
+           <input type="text" name="searchString" class="form-control me-2" placeholder="Search Bill Types..." />  
+           <button type="submit" class="btn btn-outline-secondary">Search</button>  
+       </form>  
+   </div>  
+</div>  
 
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Bill Type ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model != null && Model.Count > 0)
-        {
-            foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.BillTypeId</td>
-                    <td>@item.BillTypeName</td>
-                    <td>@item.Description</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.BillTypeId" class="btn btn-sm btn-warning">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@item.BillTypeId" class="btn btn-sm btn-danger">Delete</a>
-                    </td>
-                </tr>
-            }
-        }
-        else
-        {
-            <tr>
-                <td colspan="4" class="text-center">No bill types found.</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="table-responsive">  
+   <table class="table table-bordered table-striped">  
+       <thead class="table-dark">  
+           <tr>  
+               <th>Bill Type ID</th>  
+               <th>Name</th>  
+               <th>Description</th>  
+               <th>Actions</th>  
+           </tr>  
+       </thead>  
+       <tbody>  
+           @if (Model != null && Model.Count > 0)  
+           {  
+               foreach (var item in Model)  
+               {  
+                   <tr>  
+                       <td>@item.BillTypeId</td>  
+                       <td>@item.BillTypeName</td>  
+                       <td>@item.Description</td>  
+                       <td>  
+                           <a asp-action="Edit" asp-route-id="@item.BillTypeId" class="btn btn-sm btn-warning me-1">Edit</a>  
+                           <a asp-action="Delete" asp-route-id="@item.BillTypeId" class="btn btn-sm btn-danger">Delete</a>  
+                       </td>  
+                   </tr>  
+               }  
+           }  
+           else  
+           {  
+               <tr>  
+                   <td colspan="4" class="text-center">No bill types found.</td>  
+               </tr>  
+           }  
+       </tbody>  
+   </table>  
+</div>  
 
-<nav>
-    <ul class="pagination justify-content-center">
-        @if (Model.HasPreviousPage)
-        {
-            <li class="page-item">
-                <a class="page-link" asp-route-pageNumber="@(Model.PageIndex - 1)">Previous</a>
-            </li>
-        }
-        else
-        {
-            <li class="page-item disabled"><span class="page-link">Previous</span></li>
-        }
+<nav aria-label="Page navigation">  
+   <ul class="pagination justify-content-center">  
+       @if (Model.HasPreviousPage)  
+       {  
+           <li class="page-item">  
+               <a class="page-link" asp-route-pageNumber="@(Model.PageIndex - 1)">Previous</a>  
+           </li>  
+       }  
+       else  
+       {  
+           <li class="page-item disabled"><span class="page-link">Previous</span></li>  
+       }  
 
-        @for (int i = 1; i <= Model.TotalPages; i++)
-        {
-            <li class="page-item @(i == Model.PageIndex ? "active" : "")">
-                <a class="page-link" asp-route-pageNumber="@i">@i</a>
-            </li>
-        }
+       @for (int i = 1; i <= Model.TotalPages; i++)  
+       {  
+           <li class="page-item @(i == Model.PageIndex ? "active" : "")">  
+               <a class="page-link" asp-route-pageNumber="@i">@i</a>  
+           </li>  
+       }  
 
-        @if (Model.HasNextPage)
-        {
-            <li class="page-item">
-                <a class="page-link" asp-route-pageNumber="@(Model.PageIndex + 1)">Next</a>
-            </li>
-        }
-        else
-        {
-            <li class="page-item disabled"><span class="page-link">Next</span></li>
-        }
-    </ul>
+       @if (Model.HasNextPage)  
+       {  
+           <li class="page-item">  
+               <a class="page-link" asp-route-pageNumber="@(Model.PageIndex + 1)">Next</a>  
+           </li>  
+       }  
+       else  
+       {  
+           <li class="page-item disabled"><span class="page-link">Next</span></li>  
+       }  
+   </ul>  
 </nav>
