@@ -32,6 +32,9 @@ namespace Inventory.ViewModel.Product
         [Required]
         public int ProductTypeId { get; set; }
 
+        /// to show the dropdown list in the view
         public List<SelectListItem> ProductTypes { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> Currencies { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> Branches { get; set; } = new List<SelectListItem>();
     }
 }

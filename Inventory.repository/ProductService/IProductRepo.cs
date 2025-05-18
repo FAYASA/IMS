@@ -17,5 +17,9 @@ namespace Inventory.repository.ProductService
         void Delete(int id);
         ProductViewModel GetById(int id);
         List<SelectListItem> GetProductTypesForDropdown();
+
+        List<SelectListItem> GetBranchForDropdown();
+
+        List<SelectListItem> GetCurrencyForDropdown();
     }
 }

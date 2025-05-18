@@ -23,6 +23,7 @@ namespace Inventory.repository
         public DbSet<Bill> Bills { get; set; }
         public DbSet<BillType> BillTypes { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<Branch> Branches { get; set; }
         public DbSet<Currency> Currencies { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<inventory.models.CustomerType> CustomerTypes { get; set; }

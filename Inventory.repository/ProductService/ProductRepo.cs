@@ -105,7 +105,6 @@ namespace Inventory.repository.ProductService
             //}
             //return productTypeList;
         }
-
         public void Update(ProductViewModel model)
         {
             var data = _context.products
@@ -126,5 +125,23 @@ namespace Inventory.repository.ProductService
                 _context.SaveChanges();
             }
         }
+        public List<SelectListItem> GetBranchForDropdown()
+        {
+            return _context.Branches.Select(b => new SelectListItem
+            {
+                Value = b.BranchId.ToString(),
+                Text = b.BranchName
+            }).ToList();
+        }
+
+        public List<SelectListItem> GetCurrencyForDropdown()
+        {
+            return _context.Currencies.Select(c => new SelectListItem
+            {
+                Value = c.Id.ToString(),
+                Text = c.Name
+            }).ToList();
+        }
+
     }
 }
