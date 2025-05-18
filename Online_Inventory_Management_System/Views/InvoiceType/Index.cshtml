@@ -1,0 +1,90 @@
+﻿@using Inventory.repository.Paging;
+@using Inventory.ViewModel.Invoice;
+@model PaginatedList<InvoiceTypeListViewModel>
+
+@{
+    ViewData["Title"] = "Invoice Types";
+}
+
+<h2 class="text-center my-4">Invoice Types</h2>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <a asp-action="Create" class="btn btn-primary">Add New Invoice Type</a>
+    </div>
+    <div class="col-md-6">
+        <form asp-action="Index" method="get" class="d-flex justify-content-end">
+            <input type="text" name="searchString" value="@Context.Request.Query["searchString"]" class="form-control me-2" placeholder="Search Invoice Types..." />
+            <button type="submit" class="btn btn-outline-secondary">Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model[0].InvoiceTypeId)</th>
+                <th>@Html.DisplayNameFor(model => model[0].InvoiceTypeName)</th>
+                <th>@Html.DisplayNameFor(model => model[0].Description)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.InvoiceTypeId)</td>
+                        <td>@Html.DisplayFor(modelItem => item.InvoiceTypeName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.InvoiceTypeId }, new { @class = "btn btn-sm btn-warning me-1" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.InvoiceTypeId }, new { @class = "btn btn-sm btn-danger" })
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">No invoice types found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        @if (Model.HasPreviousPage)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-searchString="@Context.Request.Query["searchString"]">Previous</a>
+            </li>
+        }
+        else
+        {
+            <li class="page-item disabled"><span class="page-link">Previous</span></li>
+        }
+
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                <a class="page-link" asp-route-pageNumber="@i" asp-route-searchString="@Context.Request.Query["searchString"]">@i</a>
+            </li>
+        }
+
+        @if (Model.HasNextPage)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-searchString="@Context.Request.Query["searchString"]">Next</a>
+            </li>
+        }
+        else
+        {
+            <li class="page-item disabled"><span class="page-link">Next</span></li>
+        }
+    </ul>
+</nav>

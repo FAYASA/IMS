@@ -1,6 +1,7 @@
 ﻿using inventory.models;
 using Inventory.ViewModel.Bill;
 using Inventory.ViewModel.Customer;
+using Inventory.ViewModel.Invoice;
 using Inventory.ViewModel.Product;
 using System;
 using System.Collections.Generic;
@@ -107,7 +108,6 @@ namespace Inventory.ViewModel.Mapping
 
         public static IQueryable<ProductTypeListViewModel> ModelToVM(this IQueryable<ProductType> ProductType)
         {
-            // •	When need to map or transform data from one type to another.
             return ProductType.Select(pt => new ProductTypeListViewModel
             {
                 ProductTypeId = pt.ProductTypeId,
@@ -115,5 +115,61 @@ namespace Inventory.ViewModel.Mapping
                 Description = pt.Description
             });
         }
+
+        public static IQueryable<InvoiceTypeListViewModel> ModelToVM(this IQueryable<InvoiceType> invoiceType)
+        {
+            // •	When need to map or transform data from one type to another.
+            return invoiceType.Select(it => new InvoiceTypeListViewModel
+            {
+                InvoiceTypeId = it.InvoiceTypeId,
+                InvoiceTypeName = it.InvoiceTypeName,
+                Description = it.Description
+            });
+        }
+        public static IQueryable<ProductListViewModel> ModelToVM(this IQueryable<inventory.models.Product> product)
+        {
+            // •	When need to map or transform data from one type to another.
+            return product.Select(it => new ProductListViewModel
+            {
+                ProductId = it.ProductId,
+                ProductName = it.ProductName,
+                ProductCode = it.ProductCode,
+                Barcode = it.Barcode,
+                Description = it.Description,
+                ProductImage = it.ProductImage,
+                MeasureUnitId = it.MeasureUnitId,
+                BuyingPrice = it.BuyingPrice,
+                SellingPrice = it.SellingPrice,
+                BranchId = it.BranchId,
+                CurrencyId = it.CurrencyId,
+                ProductTypeId = it.ProductTypeId
+            });
+        }
+
+        //public static IQueryable<ProductListViewModel> ModelToVM(this IQueryable<inventory.models.Product> product)
+        //{
+        //    return product.Select(it => new ProductListViewModel
+        //    {
+        //        ProductId = it.ProductId,
+        //        ProductName = it.ProductName,
+        //        ProductTypeId = it.ProductTypeId,
+        //        Description = it.Description,
+        //        UnitPrice = it.UnitPrice,
+        //        Quantity = it.Quantity
+        //    });
+        //}
+
+        //public static IQueryable<InvoiceListViewModel> ModelToVM(this IQueryable<inventory.models.Invoice> invoice)
+        //{
+        //    return invoice.Select(it => new InvoiceListViewModel
+        //    {
+        //        InvoiceId = it.InvoiceId,
+        //        InvoiceName = it.InvoiceName,
+        //        CustomerId = it.CustomerId,
+        //        InvoiceDate = it.InvoiceDate,
+        //        InvoiceDueDate = it.InvoiceDueDate,
+        //        InvoiceTypeId = it.InvoiceTypeId
+        //    });
+        //}
     }
 }

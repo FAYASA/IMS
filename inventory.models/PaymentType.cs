@@ -14,5 +14,7 @@ namespace inventory.models
         public string PaymentTypeName { get; set; }
         public string Description { get; set; }
 
+        public ICollection<Product> Products { get; set; }
+
     }
 }

@@ -1,6 +1,9 @@
-﻿using System;
+﻿using inventory.models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,5 +28,11 @@ namespace Inventory.ViewModel.Product
         public int BranchId { get; set; }
         [Display(Name = "Currency")]
         public int CurrencyId { get; set; }
+
+        [Display(Name = "Product Type")]
+        [Required]
+        public int ProductTypeId { get; set; }
+
+        public List<SelectListItem> ProductTypes { get; set; } = new List<SelectListItem>();
     }
 }

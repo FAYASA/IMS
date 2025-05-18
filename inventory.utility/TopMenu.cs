@@ -82,6 +82,50 @@ namespace inventory.utility
             public const string ControllerName = "Brand";
             public const string ActionName = "Brand";
         }
+        public static class  Invoice
+        {
+            public const string PageName = "Invoice";
+            public const string RoleName = "Invoice";
+            public const string Path = "/Invoice/Index";
+            public const string ControllerName = "Invoice";
+            public const string ActionName = "Index";
+        }
+
+        public static class InvoiceType
+        {
+            public const string PageName = "Invoice Type";
+            public const string RoleName = "InvoiceType";
+            public const string Path = "/InvoiceType/Index";
+            public const string ControllerName = "InvoiceType";
+            public const string ActionName = "Index";
+        }
+
+        public static class PaymentReceive
+        {
+            public const string PageName = "Payment Receive";
+            public const string RoleName = "PaymentReceive";
+            public const string Path = "/PaymentReceive/Index";
+            public const string ControllerName = "PaymentReceive";
+            public const string ActionName = "Index";
+        }
+
+        public static class PaymentType
+        {
+            public const string PageName = "Payment Type";
+            public const string RoleName = "PaymentType";
+            public const string Path = "/PaymentType/Index";
+            public const string ControllerName = "PaymentType";
+            public const string ActionName = "Index";
+        }
+
+        public static class SalesOrder
+        {
+            public const string PageName = "Sales Order";
+            public const string RoleName = "SalesOrder";
+            public const string Path = "/SalesOrder/Index";
+            public const string ControllerName = "SalesOrder";
+            public const string ActionName = "Index";
+        }
 
         public static class Currency
         {

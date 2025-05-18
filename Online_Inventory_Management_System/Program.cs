@@ -7,6 +7,7 @@ using inventory.models;
 using Inventory.repository.CustomerService;
 using Inventory.repository.CustomerType;
 using Inventory.repository.ProductTypeService;
+using Inventory.repository.InvoiceTypeService;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
@@ -29,6 +30,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IBillTypeRepo, BillTypeRepo>();
 builder.Services.AddScoped<ICustomerTypeRepo, CustomerTypeRepo>();
 builder.Services.AddScoped<IProductTypeRepo, ProductTypeRepo>();
+builder.Services.AddScoped<IinvoiceTypeRepo,InvoiceTypeRepo>();
 
 //////
 ///It reads the "SuperAdmin" section from appsettings.json.

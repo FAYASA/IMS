@@ -643,6 +643,9 @@ namespace Online_Inventory_Management_System.Migrations
                     b.Property<int>("MeasureUnitId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("PaymentTypeId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ProductCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -655,10 +658,17 @@ namespace Online_Inventory_Management_System.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ProductTypeId")
+                        .HasColumnType("int");
+
                     b.Property<double>("SellingPrice")
                         .HasColumnType("float");
 
                     b.HasKey("ProductId");
+
+                    b.HasIndex("PaymentTypeId");
+
+                    b.HasIndex("ProductTypeId");
 
                     b.ToTable("products");
                 });
@@ -1224,6 +1234,21 @@ namespace Online_Inventory_Management_System.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("inventory.models.Product", b =>
+                {
+                    b.HasOne("inventory.models.PaymentType", null)
+                        .WithMany("Products")
+                        .HasForeignKey("PaymentTypeId");
+
+                    b.HasOne("inventory.models.ProductType", "ProductType")
+                        .WithMany()
+                        .HasForeignKey("ProductTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProductType");
+                });
+
             modelBuilder.Entity("inventory.models.PurchaseOrderLine", b =>
                 {
                     b.HasOne("inventory.models.PurchaseOrder", "PurchaseOrder")
@@ -1244,6 +1269,11 @@ namespace Online_Inventory_Management_System.Migrations
                         .IsRequired();
 
                     b.Navigation("SalesOrder");
+                });
+
+            modelBuilder.Entity("inventory.models.PaymentType", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("inventory.models.PurchaseOrder", b =>
