@@ -142,7 +142,10 @@ namespace Inventory.ViewModel.Mapping
                 SellingPrice = it.SellingPrice,
                 BranchId = it.BranchId,
                 CurrencyId = it.CurrencyId,
-                ProductTypeId = it.ProductTypeId
+                ProductTypeId = it.ProductTypeId,
+                ProductTypeName = it.ProductType.ProductTypeName,
+                BranchName = it.Branch.BranchName,
+                Currency = it.Currency.Name
             });
         }
 

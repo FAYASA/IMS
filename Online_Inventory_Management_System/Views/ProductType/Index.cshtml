@@ -1,35 +1,48 @@
 ﻿@model IEnumerable<Inventory.ViewModel.Product.ProductTypeListViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Product Types";
 }
 
-<h1 class="text-center my-4">Product Types</h1>
-
-<div class="d-flex justify-content-end mb-3">
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
+<div class="container py-4">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center rounded-top-4">
+            <h4 class="mb-0"><i class="bi bi-tags"></i> @ViewData["Title"]</h4>
+            <a asp-action="Create" class="btn btn-light btn-sm">
+                <i class="bi bi-plus-circle"></i> Add New
+            </a>
+        </div>
+        <div class="card-body p-4">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Type ID</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ProductTypeId</td>
+                                <td>@item.ProductTypeName</td>
+                                <td>@item.Description</td>
+                                <td class="text-center">
+                                    <a asp-action="Edit" asp-route-id="@item.ProductTypeId" class="btn btn-outline-warning btn-sm me-1">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.ProductTypeId" class="btn btn-outline-danger btn-sm">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
-
-<table class="table table-striped table-bordered">
-    <thead class="table-dark">
-        <tr>
-            <th scope="col">Product Type Id</th>
-            <th scope="col">Product Type Name</th>
-            <th scope="col">Description</th>
-            <th scope="col" class="text-center">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model) {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.ProductTypeId)</td>
-                <td>@Html.DisplayFor(modelItem => item.ProductTypeName)</td>
-                <td>@Html.DisplayFor(modelItem => item.Description)</td>
-                <td class="text-center">
-                    <a asp-action="Edit" asp-route-id="@item.ProductTypeId" class="btn btn-sm btn-warning">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item.ProductTypeId" class="btn btn-sm btn-danger">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>

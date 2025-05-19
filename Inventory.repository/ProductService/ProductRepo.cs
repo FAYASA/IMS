@@ -2,6 +2,8 @@
 using Inventory.repository.Paging;
 using Inventory.ViewModel.Mapping;
 using Inventory.ViewModel.Product;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -16,10 +18,12 @@ namespace Inventory.repository.ProductService
     {
 
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _env;
 
-        public ProductRepo(ApplicationDbContext context)
+        public ProductRepo(ApplicationDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
         public void Add(ProductViewModel model)
@@ -141,6 +145,27 @@ namespace Inventory.repository.ProductService
                 Value = c.Id.ToString(),
                 Text = c.Name
             }).ToList();
+        }
+
+        public async Task<string> UploadImageAsync(IFormFile imageFile)
+        {
+            if (imageFile == null || imageFile.Length == 0)
+                throw new ArgumentException("Invalid image file");
+
+            var uploadsFolder = Path.Combine(_env.WebRootPath, "uploads");
+
+            if (!Directory.Exists(uploadsFolder))
+                Directory.CreateDirectory(uploadsFolder);
+
+            var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
+            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await imageFile.CopyToAsync(fileStream);
+            }
+
+            return "/uploads/" + uniqueFileName; // return relative path
         }
 
     }

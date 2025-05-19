@@ -23,5 +23,7 @@ namespace inventory.models
         public string Email { get; set; }
         [Display(Name ="Contact Person")]
         public string ContactPerson { get; set; }
+
+        ICollection<Product> Products { get; set; }
     }
 }

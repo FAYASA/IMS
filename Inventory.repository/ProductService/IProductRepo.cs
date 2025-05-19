@@ -1,5 +1,6 @@
 ﻿using Inventory.repository.Paging;
 using Inventory.ViewModel.Product;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -21,5 +22,6 @@ namespace Inventory.repository.ProductService
         List<SelectListItem> GetBranchForDropdown();
 
         List<SelectListItem> GetCurrencyForDropdown();
+        Task<string> UploadImageAsync(IFormFile imageFile);
     }
 }

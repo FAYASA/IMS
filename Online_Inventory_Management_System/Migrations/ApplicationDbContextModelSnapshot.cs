@@ -307,6 +307,58 @@ namespace Online_Inventory_Management_System.Migrations
                     b.ToTable("BillTypes");
                 });
 
+            modelBuilder.Entity("inventory.models.Branch", b =>
+                {
+                    b.Property<int>("BranchId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BranchId"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BranchName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactPerson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CurrencyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BranchId");
+
+                    b.ToTable("Branches");
+                });
+
             modelBuilder.Entity("inventory.models.Brand", b =>
                 {
                     b.Property<int>("id")
@@ -624,7 +676,6 @@ namespace Online_Inventory_Management_System.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"));
 
                     b.Property<string>("Barcode")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("BranchId")
@@ -647,11 +698,9 @@ namespace Online_Inventory_Management_System.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ProductCode")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProductImage")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProductName")
@@ -665,6 +714,10 @@ namespace Online_Inventory_Management_System.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("ProductId");
+
+                    b.HasIndex("BranchId");
+
+                    b.HasIndex("CurrencyId");
 
                     b.HasIndex("PaymentTypeId");
 
@@ -1236,6 +1289,18 @@ namespace Online_Inventory_Management_System.Migrations
 
             modelBuilder.Entity("inventory.models.Product", b =>
                 {
+                    b.HasOne("inventory.models.Branch", "Branch")
+                        .WithMany()
+                        .HasForeignKey("BranchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("inventory.models.Currency", "Currency")
+                        .WithMany()
+                        .HasForeignKey("CurrencyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("inventory.models.PaymentType", null)
                         .WithMany("Products")
                         .HasForeignKey("PaymentTypeId");
@@ -1245,6 +1310,10 @@ namespace Online_Inventory_Management_System.Migrations
                         .HasForeignKey("ProductTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Branch");
+
+                    b.Navigation("Currency");
 
                     b.Navigation("ProductType");
                 });

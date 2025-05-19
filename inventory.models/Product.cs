@@ -13,21 +13,29 @@ namespace inventory.models
         public int ProductId { get; set; }
         [Required]
         public string ProductName { get; set; }
-        public string ProductCode { get; set; }
-        public string Barcode { get; set; }
+        public string? ProductCode { get; set; }
+        public string? Barcode { get; set; }
         public string Description { get; set; }
-        public string ProductImage { get; set; }
+        public string? ProductImage { get; set; }
         [Display(Name = "Measure Unit")]
         public int MeasureUnitId { get; set; }
         public double BuyingPrice { get; set; }
         public double SellingPrice { get; set; }
-        [Display(Name = "Branch")]
-        public int BranchId { get; set; }
-        [Display(Name = "Currency")]
-        public int CurrencyId { get; set; }
+
 
         [ForeignKey("ProductType")]
         public int ProductTypeId { get; set; }
         public ProductType ProductType { get; set; }
+
+
+        [ForeignKey("Currency")]
+        [Display(Name = "Currency")]
+        public int CurrencyId { get; set; }
+        public Currency Currency { get; set; }
+
+        [ForeignKey("Branch")]
+        [Display(Name = "Branch")]
+        public int BranchId { get; set; }
+        public Branch Branch { get; set; }
     }
 }

@@ -13,5 +13,7 @@ namespace inventory.models
         [Required]
         public string ProductTypeName { get; set; }
         public string  Description { get; set; }
+
+        ICollection<Product> Products { get; set; } 
     }
 }

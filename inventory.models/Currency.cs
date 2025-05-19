@@ -15,5 +15,7 @@ namespace inventory.models
         public string Code { get; set; }
         public string Description { get; set; }
 
+        ICollection<Product> Products { get; set; } 
+
     }
 }
