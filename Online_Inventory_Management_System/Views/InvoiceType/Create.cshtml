@@ -6,34 +6,34 @@
 
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-lg-6">
-            <div class="card border-0 shadow-lg">
-                <div class="card-header bg-dark text-white text-center">
-                    <h4 class="mb-0">Create a New Invoice Type</h4>
+        <div class="col-md-6">
+            <div class="card shadow rounded-4">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-receipt-cutoff me-2"></i> @ViewData["Title"]
+                    </h4>
                 </div>
-                <div class="card-body bg-light">
+                <div class="card-body">
                     <form asp-action="Create">
-                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-                        <div class="form-group mb-4">
+                        <div class="mb-3">
                             <label asp-for="InvoiceTypeName" class="form-label fw-bold">Invoice Type Name</label>
                             <input asp-for="InvoiceTypeName" class="form-control" placeholder="Enter invoice type name" />
                             <span asp-validation-for="InvoiceTypeName" class="text-danger"></span>
                         </div>
 
-                        <div class="form-group mb-4">
+                        <div class="mb-3">
                             <label asp-for="Description" class="form-label fw-bold">Description</label>
                             <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter description"></textarea>
                             <span asp-validation-for="Description" class="text-danger"></span>
                         </div>
 
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-dark btn-lg">Create</button>
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                            <button type="submit" class="btn btn-dark">Create</button>
                         </div>
                     </form>
-                </div>
-                <div class="card-footer text-center bg-light">
-                    <a asp-action="Index" class="btn btn-link text-dark">Back to List</a>
                 </div>
             </div>
         </div>

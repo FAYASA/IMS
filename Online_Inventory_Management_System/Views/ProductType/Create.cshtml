@@ -1,40 +1,41 @@
 ﻿@model Inventory.ViewModel.Product.CreateProductTypeViewModel
 
 @{
-   ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Product Type";
 }
 
-<h1 class="text-center my-4">Create Product Type</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow rounded-4">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-box-seam me-2"></i> @ViewData["Title"]
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-<div class="container">
-   <div class="row justify-content-center">
-       <div class="col-md-6">
-           <div class="card shadow-sm">
-               <div class="card-header bg-primary text-white">
-                   <h4 class="mb-0">Create Product Type</h4>
-               </div>
-               <div class="card-body">
-                   <form asp-action="Create">
-                       <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-                       <div class="form-group mb-3">
-                           <label asp-for="ProductTypeName" class="form-label"></label>
-                           <input asp-for="ProductTypeName" class="form-control" />
-                           <span asp-validation-for="ProductTypeName" class="text-danger"></span>
-                       </div>
-                       <div class="form-group mb-3">
-                           <label asp-for="Description" class="form-label"></label>
-                           <input asp-for="Description" class="form-control" />
-                           <span asp-validation-for="Description" class="text-danger"></span>
-                       </div>
-                       <div class="d-grid">
-                           <button type="submit" class="btn btn-primary">Create</button>
-                       </div>
-                   </form>
-               </div>
-           </div>
-           <div class="text-center mt-3">
-               <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-           </div>
-       </div>
-   </div>
+                        <div class="mb-3">
+                            <label asp-for="ProductTypeName" class="form-label fw-bold">Product Type Name</label>
+                            <input asp-for="ProductTypeName" class="form-control" placeholder="Enter product type name" />
+                            <span asp-validation-for="ProductTypeName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label fw-bold">Description</label>
+                            <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter description"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                            <button type="submit" class="btn btn-dark">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

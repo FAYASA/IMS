@@ -1,5 +1,6 @@
 ﻿using inventory.models;
 using Inventory.ViewModel.Bill;
+using Inventory.ViewModel.Currency;
 using Inventory.ViewModel.Customer;
 using Inventory.ViewModel.Invoice;
 using Inventory.ViewModel.Product;
@@ -123,6 +124,18 @@ namespace Inventory.ViewModel.Mapping
             {
                 InvoiceTypeId = it.InvoiceTypeId,
                 InvoiceTypeName = it.InvoiceTypeName,
+                Description = it.Description
+            });
+        }
+
+        public static IQueryable<CurrencyListViewModel> ModelToVM(this IQueryable<inventory.models.Currency> currency)
+        {
+            // •	When need to map or transform data from one type to another.
+            return currency.Select(it => new CurrencyListViewModel
+            {
+                Id = it.Id,
+                Name = it.Name,
+                Code = it.Code,
                 Description = it.Description
             });
         }

@@ -1,0 +1,65 @@
+﻿@model Inventory.ViewModel.Currency.CurrencyViewModel
+
+@{
+    ViewData["Title"] = "Edit Currency";
+}
+
+<div class="container py-5">
+    <div class="row gx-5">
+        <!-- Form Section -->
+        <div class="col-lg-7">
+            <div class="bg-white p-4 rounded-4 shadow-lg">
+                <h3 class="mb-4 text-dark">
+                    <i class="bi bi-pencil-square"></i> @ViewData["Title"]
+                </h3>
+
+                <form asp-action="Edit" novalidate>
+                    <input asp-for="Id" type="hidden" />
+
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label fw-bold text-dark"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Currency Name" />
+                        <span asp-validation-for="Name" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Code" class="form-label fw-bold text-dark"></label>
+                        <input asp-for="Code" class="form-control" placeholder="Currency Code (e.g. USD)" />
+                        <span asp-validation-for="Code" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Description" class="form-label fw-bold text-dark"></label>
+                        <input asp-for="Description" class="form-control" placeholder="Description (optional)" />
+                        <span asp-validation-for="Description" class="text-danger small"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a asp-action="Index" class="btn btn-outline-dark">
+                            <i class="bi bi-arrow-left-circle"></i> Back to List
+                        </a>
+                        <button type="submit" class="btn btn-dark">
+                            <i class="bi bi-check-circle"></i> Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="col-lg-5 d-none d-lg-block">
+            <div class="bg-light p-4 rounded-4 shadow-sm border border-dark">
+                <h5 class="text-primary mb-3"><i class="bi bi-info-circle"></i> Currency Information</h5>
+                <p>
+                    <strong>Name:</strong> The official name of the currency.<br />
+                    <strong>Code:</strong> The ISO 4217 currency code, typically 3 letters.<br />
+                    <strong>Description:</strong> Optional details or notes about this currency.
+                </p>
+                <hr />
+                <p class="text-muted small">
+                    Please ensure the currency code is correct to avoid transaction errors.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -28,7 +28,7 @@ namespace Inventory.repository.ProductService
 
         public void Add(ProductViewModel model)
         {
-            var vm = new inventory.models.Product()
+            var DModel = new inventory.models.Product()
             {
                 ProductName = model.ProductName,
                 ProductCode = model.ProductCode,
@@ -42,16 +42,16 @@ namespace Inventory.repository.ProductService
                 CurrencyId = model.CurrencyId,
                 ProductTypeId = model.ProductTypeId
             };
-            _context.products.Add(vm);
+            _context.products.Add(DModel);
             _context.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            var model = _context.products.Where(x => x.ProductId == id).FirstOrDefault();
-            if (model != null)
+            var DModel = _context.products.Where(x => x.ProductId == id).FirstOrDefault();
+            if (DModel != null)
             {
-                _context.products.Remove(model);
+                _context.products.Remove(DModel);
                 _context.SaveChanges();
             }
         }

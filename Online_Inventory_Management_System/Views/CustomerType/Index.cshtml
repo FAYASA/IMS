@@ -1,28 +1,35 @@
-﻿@model IEnumerable<Inventory.ViewModel.Customer.CustomerTypeListViewModel>
+﻿@using Inventory.ViewModel.Customer
+@model IEnumerable<CustomerTypeListViewModel>
 
 @{
     ViewData["Title"] = "Customer Types";
 }
 
-<div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="fw-bold mb-0">@ViewData["Title"]</h2>
-        <a asp-action="Create" class="btn btn-success d-flex align-items-center gap-2 shadow-sm">
-            <i class="bi bi-plus-circle"></i>
-            <span>Create New</span>
-        </a>
-    </div>
+<div class="container py-4">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center rounded-top-4">
+            <h4 class="mb-0"><i class="bi bi-people-fill"></i> @ViewData["Title"]</h4>
+            <a asp-action="Create" class="btn btn-light btn-sm">
+                <i class="bi bi-plus-circle"></i> Add New
+            </a>
+        </div>
 
-    <div class="card border-0 shadow rounded-4">
-        <div class="card-body p-0">
+        <div class="card-body p-4">
+            <form asp-action="Index" method="get" class="mb-4">
+                <div class="input-group">
+                    <input type="text" name="searchString" class="form-control" placeholder="Search customer types..." />
+                    <button type="submit" class="btn btn-outline-secondary"><i class="bi bi-search"></i></button>
+                </div>
+            </form>
+
             <div class="table-responsive">
-                <table class="table table-hover align-middle mb-0">
+                <table class="table table-hover align-middle">
                     <thead class="table-light">
                         <tr>
-                            <th class="text-secondary text-uppercase small">Customer Type ID</th>
-                            <th class="text-secondary text-uppercase small">Customer Type Name</th>
-                            <th class="text-secondary text-uppercase small">Description</th>
-                            <th class="text-center text-secondary text-uppercase small">Actions</th>
+                            <th>Customer Type ID</th>
+                            <th>Customer Type Name</th>
+                            <th>Description</th>
+                            <th class="text-center">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,19 +37,17 @@
                         {
                             foreach (var item in Model)
                             {
-                                <tr class="bg-white">
-                                    <td class="fw-semibold">@item.CustomerTypeId</td>
+                                <tr>
+                                    <td>@item.CustomerTypeId</td>
                                     <td>@item.CustomerTypeName</td>
-                                    <td class="text-muted">@item.Description</td>
+                                    <td>@item.Description</td>
                                     <td class="text-center">
-                                        <div class="btn-group" role="group">
-                                            <a asp-action="Edit" asp-route-id="@item.CustomerTypeId" class="btn btn-sm btn-outline-warning rounded-pill me-1" title="Edit">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </a>
-                                            <a asp-action="Delete" asp-route-id="@item.CustomerTypeId" class="btn btn-sm btn-outline-danger rounded-pill" title="Delete">
-                                                <i class="bi bi-trash"></i>
-                                            </a>
-                                        </div>
+                                        <a asp-action="Edit" asp-route-id="@item.CustomerTypeId" class="btn btn-outline-warning btn-sm me-1">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.CustomerTypeId" class="btn btn-outline-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             }
@@ -50,12 +55,14 @@
                         else
                         {
                             <tr>
-                                <td colspan="4" class="text-center text-muted py-4">No customer types found.</td>
+                                <td colspan="4" class="text-center text-muted">No customer types found.</td>
                             </tr>
                         }
                     </tbody>
                 </table>
             </div>
+
+            @* add pagination, it would go here *@
         </div>
     </div>
 </div>

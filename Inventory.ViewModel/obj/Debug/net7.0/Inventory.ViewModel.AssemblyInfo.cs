@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Inventory.ViewModel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+178e1c104ce4ee372bf8454f8090be6365c9e585")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29aa4c569a648ebc534fcbcf0742339980e9cd75")]
 [assembly: System.Reflection.AssemblyProductAttribute("Inventory.ViewModel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Inventory.ViewModel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

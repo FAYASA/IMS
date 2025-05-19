@@ -192,6 +192,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFR5cGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GitHub_Repo/IMS/Online_Inventory_Management_System/Views/Currency/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVuY3lcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub_Repo/IMS/Online_Inventory_Management_System/Views/Currency/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVuY3lcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub_Repo/IMS/Online_Inventory_Management_System/Views/Currency/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVuY3lcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GitHub_Repo/IMS/Online_Inventory_Management_System/Views/CustomerType/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJUeXBlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Inventory.ViewModel.Currency.CurrencyListViewModel>
+
+@{
+    ViewData["Title"] = "Currencies";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center rounded-top-4">
+            <h4 class="mb-0"><i class="bi bi-currency-exchange"></i> @ViewData["Title"]</h4>
+            <a asp-action="Create" class="btn btn-light btn-sm">
+                <i class="bi bi-plus-circle"></i> Add New
+            </a>
+        </div>
+        <div class="card-body p-4">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>Description</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Code</td>
+                                <td>@item.Description</td>
+                                <td class="text-center">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning btn-sm me-1">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

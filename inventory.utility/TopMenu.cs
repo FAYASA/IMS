@@ -26,6 +26,14 @@ namespace inventory.utility
             public const string ActionName = "Index";
         }
 
+        public static class Currency
+        {
+            public const string PageName = "Currency";
+            public const string RoleName = "Currency";
+            public const string Path = "/Currency/Index";
+            public const string ControllerName = "Currency";
+            public const string ActionName = "Index";
+        }
         public static class Product
         {
             public const string PageName = "Product";
@@ -125,15 +133,6 @@ namespace inventory.utility
             public const string Path = "/SalesOrder/Index";
             public const string ControllerName = "SalesOrder";
             public const string ActionName = "Index";
-        }
-
-        public static class Currency
-        {
-            public const string PageName = "Currency";
-            public const string RoleName = "Currency";
-            public const string Path = "/Currency/Index";
-            public const string ControllerName = "Currency";
-            public const string ActionName = "Currency";
         }
     }
 }
