@@ -3117,11 +3117,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub_Repo\\IMS\\inventory.models\\inventory.models.csproj",
+      "projectUniqueName": "D:\\GitHub_Repo\\IMS2\\inventory.models\\inventory.models.csproj",
       "projectName": "inventory.models",
-      "projectPath": "D:\\GitHub_Repo\\IMS\\inventory.models\\inventory.models.csproj",
+      "projectPath": "D:\\GitHub_Repo\\IMS2\\inventory.models\\inventory.models.csproj",
       "packagesPath": "C:\\Users\\Fayas\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub_Repo\\IMS\\inventory.models\\obj\\",
+      "outputPath": "D:\\GitHub_Repo\\IMS2\\inventory.models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

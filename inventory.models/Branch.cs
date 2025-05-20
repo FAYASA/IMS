@@ -15,6 +15,7 @@ namespace inventory.models
         public string Description { get; set; }
         [Display(Name ="Currency")]
         public int CurrencyId { get; set; }
+        public Currency Currency { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string State { get; set; }

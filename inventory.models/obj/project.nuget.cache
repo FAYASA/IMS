@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6acPbHPD5cY=",
+  "dgSpecHash": "rXYkzrbOLg8=",
   "success": true,
-  "projectFilePath": "D:\\GitHub_Repo\\IMS\\inventory.models\\inventory.models.csproj",
+  "projectFilePath": "D:\\GitHub_Repo\\IMS2\\inventory.models\\inventory.models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fayas\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Fayas\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -3254,11 +3254,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub_Repo\\IMS\\inventory.utility\\inventory.utility.csproj",
+      "projectUniqueName": "D:\\GitHub_Repo\\IMS2\\inventory.utility\\inventory.utility.csproj",
       "projectName": "inventory.utility",
-      "projectPath": "D:\\GitHub_Repo\\IMS\\inventory.utility\\inventory.utility.csproj",
+      "projectPath": "D:\\GitHub_Repo\\IMS2\\inventory.utility\\inventory.utility.csproj",
       "packagesPath": "C:\\Users\\Fayas\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub_Repo\\IMS\\inventory.utility\\obj\\",
+      "outputPath": "D:\\GitHub_Repo\\IMS2\\inventory.utility\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3279,11 +3279,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\GitHub_Repo\\IMS\\inventory.models\\inventory.models.csproj": {
-              "projectPath": "D:\\GitHub_Repo\\IMS\\inventory.models\\inventory.models.csproj"
+            "D:\\GitHub_Repo\\IMS2\\inventory.models\\inventory.models.csproj": {
+              "projectPath": "D:\\GitHub_Repo\\IMS2\\inventory.models\\inventory.models.csproj"
             },
-            "D:\\GitHub_Repo\\IMS\\Inventory.repository\\Inventory.repository.csproj": {
-              "projectPath": "D:\\GitHub_Repo\\IMS\\Inventory.repository\\Inventory.repository.csproj"
+            "D:\\GitHub_Repo\\IMS2\\Inventory.repository\\Inventory.repository.csproj": {
+              "projectPath": "D:\\GitHub_Repo\\IMS2\\Inventory.repository\\Inventory.repository.csproj"
             }
           }
         }
