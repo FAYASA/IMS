@@ -1,5 +1,6 @@
 ﻿using inventory.models;
 using Inventory.ViewModel.Bill;
+using Inventory.ViewModel.Branch;
 using Inventory.ViewModel.Currency;
 using Inventory.ViewModel.Customer;
 using Inventory.ViewModel.Invoice;
@@ -162,6 +163,24 @@ namespace Inventory.ViewModel.Mapping
             });
         }
 
+        public static IQueryable<BranchListViewModel> ModelToVM(this IQueryable<inventory.models.Branch> branch)
+        {
+            return branch.Select(it => new BranchListViewModel
+            {
+                BranchId = it.BranchId,
+                BranchName = it.BranchName,
+                Description = it.Description,
+                CurrencyId = it.CurrencyId,
+                Address = it.Address,
+                City = it.City,
+                State = it.State,
+                ZipCode = it.ZipCode,
+                Phone = it.Phone,
+                Email = it.Email,
+                ContactPerson = it.ContactPerson,
+                CurrencyName = it.Currency.Name
+            });
+        }
         //public static IQueryable<ProductListViewModel> ModelToVM(this IQueryable<inventory.models.Product> product)
         //{
         //    return product.Select(it => new ProductListViewModel

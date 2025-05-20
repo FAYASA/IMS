@@ -1,0 +1,96 @@
+﻿@model Inventory.ViewModel.Branch.BranchViewModel
+
+@{
+    ViewData["Title"] = "Create Branch";
+}
+
+<div class="container mt-1">
+    <div class="row justify-content-center">
+        <div class="col-lg-11">
+            <div class="card shadow rounded-4">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-building me-2"></i> @ViewData["Title"]
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-4">
+                                <label asp-for="BranchName" class="form-label">Branch Name</label>
+                                <input asp-for="BranchName" class="form-control" />
+                                <span asp-validation-for="BranchName" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="Description" class="form-label">Description</label>
+                                <input asp-for="Description" class="form-control" />
+                                <span asp-validation-for="Description" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="CurrencyId" class="form-label">Currency</label>
+                                <select asp-for="CurrencyId" class="form-select" asp-items="Model.Currencies"></select>
+                                <span asp-validation-for="CurrencyId" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="Address" class="form-label">Address</label>
+                                <input asp-for="Address" class="form-control" />
+                                <span asp-validation-for="Address" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="City" class="form-label">City</label>
+                                <input asp-for="City" class="form-control" />
+                                <span asp-validation-for="City" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="State" class="form-label">State</label>
+                                <input asp-for="State" class="form-control" />
+                                <span asp-validation-for="State" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="ZipCode" class="form-label">Zip Code</label>
+                                <input asp-for="ZipCode" class="form-control" />
+                                <span asp-validation-for="ZipCode" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="Phone" class="form-label">Phone</label>
+                                <input asp-for="Phone" class="form-control" />
+                                <span asp-validation-for="Phone" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="Email" class="form-label">Email</label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="ContactPerson" class="form-label">Contact Person</label>
+                                <input asp-for="ContactPerson" class="form-control" />
+                                <span asp-validation-for="ContactPerson" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-arrow-left-circle me-1"></i> Back to List
+                            </a>
+                            <button type="submit" class="btn btn-dark btn-sm">
+                                <i class="bi bi-check2-circle me-1"></i> Create
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
